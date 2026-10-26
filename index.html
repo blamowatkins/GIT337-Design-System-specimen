@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watkins Bros | Design System Specimen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <p>Watkins Bros Mobile Detailing</p>
+  <h1>Design System Specimen</h1>
+  <p>
+    A reusable design system for a mobile auto
+    detailing service in the DMV area.
+  </p>
+</header>
+<main>
+  <section id="s1" class="card">
+    <h2>S1 — Foundation and Reset</h2>
+
+    <p>
+      This design system uses a selective CSS reset
+      to preserve useful browser defaults.
+    </p>
+
+    <h3>Reset Decisions</h3>
+
+    <ul>
+      <li>
+        Use border-box sizing to make layouts
+        easier to control.
+      </li>
+      <li>
+        Preserve visible keyboard focus indicators
+        for accessibility.
+      </li>
+      <li>
+        Keep meaningful heading and list styles
+        instead of removing every browser default.
+      </li>
+    </ul>
+  </section>
+
+  <section id="s2" class="card">
+  <h2>S2 — Token Inventory</h2>
+
+  <p>
+    These reusable design tokens define the colors,
+    spacing, typography, and visual styles used
+    throughout Watkins Bros Mobile Detailing.
+  </p>
+
+  <h3>Color Tokens</h3>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Token</th>
+          <th scope="col">Value</th>
+          <th scope="col">Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>--color-primary</td>
+          <td>#16324f</td>
+          <td>Brand color and primary actions</td>
+        </tr>
+        <tr>
+          <td>--color-accent</td>
+          <td>#f2b84b</td>
+          <td>Highlights and accents</td>
+        </tr>
+        <tr>
+          <td>--color-background</td>
+          <td>#f5f7fa</td>
+          <td>Page background</td>
+        </tr>
+        <tr>
+          <td>--color-surface</td>
+          <td>#ffffff</td>
+          <td>Card backgrounds</td>
+        </tr>
+        <tr>
+          <td>--color-text</td>
+          <td>#243247</td>
+          <td>Body text</td>
+        </tr>
+        <tr>
+          <td>--color-border</td>
+          <td>#cbd5e1</td>
+          <td>Card and control borders</td>
+        </tr>
+        <tr>
+          <td>--color-focus</td>
+          <td>#b45309</td>
+          <td>Keyboard focus indicators</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<h3>Spacing Tokens</h3>
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Token</th>
+        <th scope="col">Value</th>
+        <th scope="col">Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>--space-1</td>
+        <td>0.5rem</td>
+        <td>Small gaps and compact spacing</td>
+      </tr>
+      <tr>
+        <td>--space-2</td>
+        <td>1rem</td>
+        <td>Standard element spacing</td>
+      </tr>
+      <tr>
+        <td>--space-3</td>
+        <td>1.5rem</td>
+        <td>Card padding and layout gaps</td>
+      </tr>
+      <tr>
+        <td>--space-4</td>
+        <td>2rem</td>
+        <td>Large spacing and header padding</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Sizing and Measure Tokens</h3>
+
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Token</th>
+        <th scope="col">Value</th>
+        <th scope="col">Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>--size-content</td>
+        <td>72rem</td>
+        <td>Maximum width of the main content area</td>
+      </tr>
+      <tr>
+        <td>--measure-text</td>
+        <td>65ch</td>
+        <td>Readable line length for paragraphs</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Radius and Elevation Tokens</h3>
+
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Token</th>
+        <th scope="col">Value</th>
+        <th scope="col">Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>--radius-small</td>
+        <td>0.375rem</td>
+        <td>Rounded corners for buttons and controls</td>
+      </tr>
+      <tr>
+        <td>--radius-card</td>
+        <td>0.75rem</td>
+        <td>Rounded corners for cards</td>
+      </tr>
+      <tr>
+        <td>--shadow-card</td>
+        <td>0 4px 12px rgb(0 0 0 / 0.08)</td>
+        <td>Subtle shadows for raised surfaces</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Typography Tokens</h3>
+
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Token</th>
+        <th scope="col">Value</th>
+        <th scope="col">Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>--font-body</td>
+        <td>Arial, Segoe UI, sans-serif</td>
+        <td>Body text and controls</td>
+      </tr>
+      <tr>
+        <td>--font-display</td>
+        <td>Georgia, Times New Roman, serif</td>
+        <td>Headings and titles</td>
+      </tr>
+      <tr>
+        <td>--font-size-small</td>
+        <td>0.875rem</td>
+        <td>Metadata and small labels</td>
+      </tr>
+      <tr>
+        <td>--font-size-base</td>
+        <td>1rem</td>
+        <td>Standard body text</td>
+      </tr>
+      <tr>
+        <td>--font-size-medium</td>
+        <td>1.25rem</td>
+        <td>Smaller headings</td>
+      </tr>
+      <tr>
+        <td>--font-size-large</td>
+        <td>1.5rem to 2.25rem</td>
+        <td>Responsive section headings</td>
+      </tr>
+      <tr>
+        <td>--font-size-title</td>
+        <td>2rem to 3.5rem</td>
+        <td>Responsive page titles</td>
+      </tr>
+      <tr>
+        <td>--line-height-body</td>
+        <td>1.6</td>
+        <td>Readable paragraph spacing</td>
+      </tr>
+      <tr>
+        <td>--line-height-heading</td>
+        <td>1.2</td>
+        <td>Heading line spacing</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Color Samples</h3>
+
+<div class="color-samples">
+  <div class="swatch primary">Primary</div>
+  <div class="swatch accent">Accent</div>
+  <div class="swatch background">Background</div>
+  <div class="swatch surface">Surface</div>
+  <div class="swatch text-color">Text</div>
+  <div class="swatch border-color">Border</div>
+  <div class="swatch focus-color">Focus</div>
+</div>
+</section>
+
+<section id="theme-demo">
+  <h2>Theme Comparison</h2>
+
+  <div class="theme-comparison">
+
+    <div class="theme-panel">
+      <article class="card">
+        <h3>Default Theme</h3>
+        <p>
+          Watkins Bros uses a dark-blue primary color
+          with a clean white surface.
+        </p>
+        <a href="#s2">View design tokens</a>
+      </article>
+    </div>
+
+    <div class="theme-panel theme-alt">
+      <article class="card">
+        <h3>Alternate Theme</h3>
+        <p>
+          This version uses purple branding and
+          a light lavender surface.
+        </p>
+        <a href="#s2">View design tokens</a>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<section id="s3" class="card">
+  <h2>S3 — Typography</h2>
+
+  <p class="label">Watkins Bros Type System</p>
+
+  <h3>Clear, Readable Typography</h3>
+
+  <p>
+    Good typography helps customers understand
+    our mobile detailing services, pricing,
+    and appointment information.
+  </p>
+
+  <h4>Supporting Heading</h4>
+
+  <p>
+    Our design system uses readable fonts,
+    comfortable line spacing, and responsive
+    heading sizes across different screen widths.
+  </p>
+
+  <h3>Typography Guidelines</h3>
+
+  <ul>
+    <li>Use Arial for body text and controls.</li>
+    <li>Use Georgia for headings and titles.</li>
+    <li>Keep paragraphs at a readable line length.</li>
+    <li>Maintain clear spacing between sections.</li>
+  </ul>
+
+  <p>
+    <small>Metadata example: Updated October 2026</small>
+  </p>
+
+  <p>
+    CSS example:
+    <code>font-family: var(--font-body);</code>
+  </p>
+
+  <p>
+    <a href="#s2">Review typography tokens</a>
+  </p>
+
+  <h3>Font Source and Fallback Plan</h3>
+
+  <p>
+    Body font: Arial, with Segoe UI and
+    sans-serif fallbacks.
+  </p>
+
+  <p>
+    Display font: Georgia, with Times New Roman
+    and serif fallbacks.
+  </p>
+
+  <p>
+    These are system-installed fonts. No external
+    font files are downloaded or redistributed.
+    Available weights and styles depend on the
+    operating system and installed fonts.
+  </p>
+</section>
+
+<section id="s4" class="card">
+  <h2>S4 — Actions and States</h2>
+
+  <p>
+    These reusable actions help customers explore
+    Watkins Bros services and appointment options.
+  </p>
+
+  <h3>Text Link</h3>
+  <p>
+    <a href="#s3">Review our typography guidelines</a>
+  </p>
+
+  <h3>Buttons</h3>
+
+  <div class="button-group">
+    <a class="btn btn-primary" href="#s1">
+      Primary Action
+    </a>
+
+    <a class="btn btn-secondary" href="#s2">
+      Secondary Action
+    </a>
+
+    <button class="btn btn-primary" type="button" disabled>
+      Disabled Action
+    </button>
+  </div>
+
+  <h3>Interaction States</h3>
+
+  <ul>
+    <li>Hover: The button appearance changes when pointed at.</li>
+    <li>Focus: Keyboard users see a visible outline.</li>
+    <li>Active: The button changes while being pressed.</li>
+    <li>Disabled: Unavailable controls cannot be activated.</li>
+  </ul>
+</section>
+
+<section id="s5" class="card">
+  <h2>S5 — Surfaces and Content Patterns</h2>
+
+  <p>
+    These reusable content patterns help Watkins Bros
+    display services and customer information clearly.
+  </p>
+
+  <div class="surface-grid">
+
+    <article class="service-card">
+      <h3>Service Card</h3>
+      <p>Interior detailing for cars, SUVs, and trucks.</p>
+      <a href="#s4">View service action</a>
+    </article>
+
+    <article class="info-card">
+      <h3>Information Card</h3>
+      <p>
+        Mobile appointments are available throughout
+        the DMV service area.
+      </p>
+    </article>
+
+  </div>
+
+  <aside class="notice">
+    <h3>Important Notice</h3>
+    <p>
+      Customers should remove personal valuables
+      before their detailing appointment.
+    </p>
+  </aside>
+
+  <figure class="media-placeholder">
+    <div class="media-box" role="img"
+         aria-label="Placeholder for a detailed vehicle photo">
+      Vehicle Photo Placeholder
+    </div>
+    <figcaption>
+      Example media area for future detailing photos.
+    </figcaption>
+  </figure>
+</section>
+
+<section id="s6" class="card">
+  <h2>S6 — Control Foundations</h2>
+
+  <p>
+    These form controls demonstrate consistent
+    styling and accessibility for Watkins Bros.
+  </p>
+
+  <form class="control-form">
+
+    <div class="form-field">
+      <label for="customer-name">Customer Name</label>
+      <input
+        type="text"
+        id="customer-name"
+        name="customer-name"
+        placeholder="Enter your name">
+    </div>
+
+    <div class="form-field">
+      <label for="service-type">Choose a Service</label>
+      <select id="service-type" name="service-type">
+        <option value="">Select a service</option>
+        <option value="interior">Interior Detailing</option>
+        <option value="exterior">Exterior Detailing</option>
+        <option value="full">Full Detailing</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label>
+        <input type="checkbox" name="reminders">
+        Send appointment reminders
+      </label>
+    </div>
+
+    <fieldset>
+      <legend>Preferred Contact Method</legend>
+
+      <label>
+        <input type="radio" name="contact" value="phone">
+        Phone
+      </label>
+
+      <label>
+        <input type="radio" name="contact" value="email">
+        Email
+      </label>
+    </fieldset>
+
+    <button type="button" class="btn btn-primary">
+      Example Button
+    </button>
+
+  </form>
+</section>
+</main>
+</body>
+</html>

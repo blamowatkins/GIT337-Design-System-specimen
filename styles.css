@@ -1,0 +1,446 @@
+/* S1 — Selective CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* S2 — Design System Tokens */
+
+:root {
+  --color-primary: #16324f;
+  --color-accent: #f2b84b;
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-text: #243247;
+  --color-border: #cbd5e1;
+  --color-focus: #b45309;
+
+ /* Spacing tokens */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  /* Sizing and measure tokens */
+  --size-content: 72rem;
+  --measure-text: 65ch;
+
+  /* Radius tokens */
+  --radius-small: 0.375rem;
+  --radius-card: 0.75rem;
+
+  /* Elevation token */
+  --shadow-card: 0 4px 12px rgb(0 0 0 / 0.08);
+
+  /* Typography tokens */
+  --font-body: Arial, "Segoe UI", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-medium: 1.25rem;
+  --font-size-large: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  --font-size-title: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+
+  --line-height-body: 1.6;
+  --line-height-heading: 1.2;
+}
+
+/* Base typography and colors */
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: var(--line-height-heading);
+}
+
+h1 {
+  font-size: var(--font-size-title);
+}
+
+h2 {
+  font-size: var(--font-size-large);
+}
+
+h3 {
+  font-size: var(--font-size-medium);
+}
+
+/* Page header */
+
+.site-header {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--space-4);
+}
+
+.site-header h1 {
+  margin-block: var(--space-1);
+}
+
+.site-header p {
+  max-width: var(--measure-text);
+}
+
+/* Main layout and cards */
+
+main {
+  width: min(100%, var(--size-content));
+  margin-inline: auto;
+  padding: var(--space-3);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-card);
+}
+
+.card p {
+  max-width: var(--measure-text);
+}
+
+/* S2 — Token Inventory Table */
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+th {
+  background: var(--color-background);
+  font-weight: 700;
+}
+
+td {
+  overflow-wrap: anywhere;
+}
+
+/* S2 — Visual Color Samples */
+
+.color-samples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: var(--space-2);
+}
+
+.swatch {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  text-align: center;
+  font-weight: 700;
+}
+
+.swatch.primary {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.swatch.accent {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.swatch.background {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.swatch.surface {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.swatch.text-color {
+  background: var(--color-text);
+  color: var(--color-surface);
+}
+
+.swatch.border-color {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.swatch.focus-color {
+  background: var(--color-focus);
+  color: var(--color-surface);
+}
+
+/* Alternate Theme */
+
+.theme-alt {
+  --color-primary: #4b2e65;
+  --color-accent: #e9c46a;
+  --color-background: #eee7f5;
+  --color-surface: #f8f3fc;
+  --color-text: #251b31;
+  --color-border: #987eae;
+  --color-focus: #9a4700;
+}
+
+/* Theme Comparison Layout */
+
+#theme-demo {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.theme-comparison {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 18rem), 1fr)
+  );
+  gap: var(--space-3);
+}
+
+.theme-panel {
+  background: var(--color-background);
+  padding: var(--space-2);
+  border-radius: var(--radius-card);
+}
+
+.theme-panel .card {
+  height: 100%;
+  color: var(--color-text);
+}
+
+.theme-panel a {
+  color: var(--color-primary);
+}
+
+/* S3 — Typography */
+
+h4 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-heading);
+}
+
+.label,
+small {
+  font-family: var(--font-body);
+  font-size: var(--font-size-small);
+}
+
+.label {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+code {
+  font-size: var(--font-size-small);
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* S4 — Actions and States */
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-small);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* S5 — Surfaces and Content Patterns */
+
+.surface-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 18rem), 1fr)
+  );
+  gap: var(--space-3);
+  margin-block: var(--space-3);
+}
+
+.service-card,
+.info-card {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.service-card {
+  background: var(--color-surface);
+  border-left: 5px solid var(--color-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.info-card {
+  background: var(--color-background);
+  border-left: 5px solid var(--color-accent);
+}
+
+.notice {
+  padding: var(--space-3);
+  margin-block: var(--space-3);
+  background: var(--color-background);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-small);
+}
+
+.media-placeholder {
+  margin: 0;
+}
+
+.media-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12rem;
+  padding: var(--space-3);
+  background: var(--color-background);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-card);
+  text-align: center;
+}
+
+figcaption {
+  margin-top: var(--space-1);
+  font-size: var(--font-size-small);
+}
+
+/* S6 — Control Foundations */
+
+.control-form {
+  display: grid;
+  gap: var(--space-3);
+  max-width: var(--measure-text);
+}
+
+.form-field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.form-field > label,
+fieldset legend {
+  font-weight: 700;
+}
+
+.form-field input[type="text"],
+.form-field select {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+fieldset {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
